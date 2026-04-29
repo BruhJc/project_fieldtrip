@@ -23,5 +23,8 @@
         $controller = new showController();
         $controller->show();
     ?>
+
+    <h5>kocak</h5>
+
 </body>
 </html>
