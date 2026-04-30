@@ -13,4 +13,15 @@
             }
         }
     }
+
+    class ujiKompetensi{
+        public function kuis(){
+            $kuis = new kuis();
+            $result = $kuis->kuis();
+                while($data = mysqli_fetch_assoc($result)){
+                    var_dump($data);
+                }
+        }
+    }
+
 ?>

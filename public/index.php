@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../script/index.js"></script>
-    <link rel="stylesheet" href="../css/index.css">
-    
+    <title>Navbar</title>
+    <link rel="stylesheet" href="/project_fieldtrip/css/index.css">
 </head>
 <body>
-    <div>
-        <button onclick="muncul()">Test</button>
+    <nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <span class="emoji">🦧</span>OrangUtan<span>Haven</span>
+    </a>
+    
+    <ul class="nav-links">
+      <li><a href="#konservasi">Pendataan</a></li>
+      <li><a href="#donasi" class="btn-cta">Uji Kompetensi</a></li>
+    </ul>
+  </div>
+</nav>
+
+<?php
+    require '../app/db/connection.php';
+    require '../app/controllers/showController.php';
+    require '../app/models/show.php';
+
+    $controller = new showController();
+    $controller->show();
+?>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2026 <strong>OrangUtan</strong>. Wild, Wise, Wanderer.</p>
+    <div class="footer-socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">Kontak</a>
     </div>
-    <div class="kotak" id="kotak">
-
-    </div>
-    <?php
-        require '../app/db/connection.php';
-        require '../app/controllers/showController.php';
-        require '../app/models/show.php';
-
-        $controller = new showController();
-        $controller->show();
-    ?>
-    <?= 'Ayam Goreng'; ?>
-    <h5>Ayam</h5>
-    <h6>Telor</h6>
-
+  </div>
+</footer>
 </body>
 </html>
