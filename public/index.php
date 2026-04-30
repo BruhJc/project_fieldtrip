@@ -23,7 +23,7 @@
         $controller = new showController();
         $controller->show();
     ?>
-
+    <?= 'Ayam Goreng'; ?>
     <h5>Ayam</h5>
     <h6>Telor</h6>
 
