@@ -24,7 +24,7 @@
         $controller->show();
     ?>
 
-    <h5>kocak</h5>
+    <h5>Ayam</h5>
 
 </body>
 </html>
