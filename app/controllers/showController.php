@@ -5,7 +5,11 @@
             if(mysqli_num_rows($show->show())!=0){
                 foreach($show->show() as $row):
 ?>  
-                        <p>Nama : <?= $row['name']; ?></p>
+                    <a href="detail.php?id=<?= $row['id'] ?>">
+                        <div class="info">
+                            <p>Nama : <?= $row['name']; ?></p>
+                        </div>
+                    </a>
 <?php
                 endforeach;
             } else {

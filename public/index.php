@@ -20,14 +20,16 @@
   </div>
 </nav>
 
-<?php
+<div class="pendataan">
+  <?php
     require '../app/db/connection.php';
     require '../app/controllers/showController.php';
     require '../app/models/show.php';
 
     $controller = new showController();
     $controller->show();
-?>
+  ?>
+</div>
 
 <footer class="footer">
   <div class="footer-content">
