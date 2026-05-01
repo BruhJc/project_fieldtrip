@@ -7,12 +7,12 @@
 </head>
 <body>
     <?php
-        require '../app/db/connection.php';
-        require '../app/controllers/showController.php';
-        require '../app/models/show.php';
+        // require '../app/db/connection.php';
+        // require '../app/controllers/showController.php';
+        // require '../app/models/show.php';
 
-        $controller = new ujiKompetensi();
-        $controller->kuis();
+        // $controller = new ujiKompetensi();
+        // $controller->kuis();
     ?>
 </body>
 </html>
