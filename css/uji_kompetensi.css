@@ -1,0 +1,252 @@
+:root {
+    --orange:       #EF6C00;
+    --orange-dark:  #E65100;
+    --orange-light: #FFF3E0;
+    --orange-border:#FFCC80;
+    --hijau:        #2E7D32;
+    --hijau-light:  #E8F5E9;
+    --merah:        #C62828;
+    --merah-light:  #FFEBEE;
+    --teks-gelap:   #1E1E2E;
+    --teks-abu:     #6B7280;
+    --putih:        #FFFFFF;
+    --bg-halaman:   #FFF8F2;
+}
+
+body { background-color: var(--bg-halaman); }
+
+/* HEADER */
+.uji-header {
+    text-align: center;
+    padding: 50px 24px 28px;
+    font-family: 'Segoe UI', sans-serif;
+}
+.uji-badge {
+    display: inline-block;
+    background-color: var(--orange-light);
+    color: var(--orange-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 999px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    border: 1px solid var(--orange-border);
+}
+.uji-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+    color: var(--teks-gelap);
+    margin-bottom: 10px;
+}
+.uji-header h1 span { color: var(--orange); }
+.uji-header p { color: var(--teks-abu); font-size: 0.93rem; }
+
+/* CONTAINER */
+.uji-container {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* KARTU SOAL */
+.soal-card {
+    background: var(--putih);
+    border-radius: 16px;
+    padding: 26px 28px;
+    box-shadow: 0 3px 16px rgba(239,108,0,0.10);
+    border-left: 5px solid var(--orange-border);
+    transition: box-shadow 0.25s, transform 0.25s;
+    animation: fadeUp 0.4s ease both;
+}
+.soal-card:hover {
+    box-shadow: 0 6px 28px rgba(239,108,0,0.18);
+    transform: translateY(-2px);
+}
+.soal-card:nth-child(1)  { animation-delay: 0.05s; }
+.soal-card:nth-child(2)  { animation-delay: 0.10s; }
+.soal-card:nth-child(3)  { animation-delay: 0.15s; }
+.soal-card:nth-child(4)  { animation-delay: 0.20s; }
+.soal-card:nth-child(5)  { animation-delay: 0.25s; }
+.soal-card:nth-child(6)  { animation-delay: 0.30s; }
+.soal-card:nth-child(7)  { animation-delay: 0.35s; }
+.soal-card:nth-child(8)  { animation-delay: 0.40s; }
+.soal-card:nth-child(9)  { animation-delay: 0.45s; }
+.soal-card:nth-child(10) { animation-delay: 0.50s; }
+
+@keyframes fadeUp {
+    from { opacity:0; transform:translateY(18px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+
+/* NOMOR SOAL */
+.soal-nomor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--orange);
+    color: var(--putih);
+    font-weight: 800;
+    font-size: 0.88rem;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+/* TEKS SOAL */
+.soal-teks {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--teks-gelap);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+/* GRUP PILIHAN */
+.pilihan-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+/* LABEL PILIHAN */
+.pilihan {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 15px;
+    border-radius: 10px;
+    border: 2px solid #E5E7EB;
+    cursor: pointer;
+    font-size: 0.88rem;
+    color: var(--teks-gelap);
+    transition: border-color 0.2s, background-color 0.2s;
+}
+.pilihan:hover {
+    border-color: var(--orange);
+    background-color: var(--orange-light);
+}
+.pilihan input[type="radio"] { display: none; }
+
+/* BUBBLE HURUF */
+.bubble {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: 2px solid #D1D5DB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.76rem;
+    flex-shrink: 0;
+    color: var(--teks-abu);
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.pilihan input[type="radio"]:checked + .bubble {
+    background-color: var(--orange);
+    border-color: var(--orange);
+    color: var(--putih);
+}
+.pilihan:has(input[type="radio"]:checked) {
+    border-color: var(--orange);
+    background-color: var(--orange-light);
+}
+
+/* HIGHLIGHT SETELAH SUBMIT */
+.pilihan.benar {
+    border-color: var(--hijau) !important;
+    background-color: var(--hijau-light) !important;
+}
+.pilihan.salah {
+    border-color: var(--merah) !important;
+    background-color: var(--merah-light) !important;
+}
+
+/* TOMBOL SUBMIT */
+.submit-wrap { text-align: center; margin-top: 6px; }
+.btn-submit {
+    background-color: var(--orange);
+    color: var(--putih);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 13px 46px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(239,108,0,0.38);
+    transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-submit:hover {
+    background-color: var(--orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(239,108,0,0.48);
+}
+.btn-submit:active { transform: translateY(0); }
+
+/* MODAL */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.modal-overlay.tampil { display: flex; }
+.modal-box {
+    background: var(--putih);
+    border-radius: 22px;
+    padding: 46px 38px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: popIn 0.35s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes popIn {
+    from { opacity:0; transform:scale(0.8); }
+    to   { opacity:1; transform:scale(1); }
+}
+.modal-emoji { font-size: 3.8rem; margin-bottom: 14px; }
+.modal-box h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--teks-gelap);
+    margin-bottom: 6px;
+    font-family: 'Segoe UI', sans-serif;
+}
+.modal-skor {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--orange);
+    margin: 10px 0;
+}
+.modal-box p {
+    color: var(--teks-abu);
+    font-size: 0.88rem;
+    margin-bottom: 26px;
+}
+.btn-ulangi {
+    background-color: var(--orange);
+    color: var(--putih);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.93rem;
+    font-weight: 700;
+    padding: 11px 34px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(239,108,0,0.35);
+    transition: background-color 0.2s;
+}
+.btn-ulangi:hover { background-color: var(--orange-dark); }

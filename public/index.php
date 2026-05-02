@@ -8,14 +8,14 @@
 </head>
 <body>
     <nav class="navbar">
-  <div class="nav-container">
-    <a href="#" class="nav-logo">
-      <span class="emoji">🦧</span>OrangUtan<span>Haven</span>
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          <span class="emoji">🦧</span>OrangUtan<span>Haven</span>
     </a>
     
     <ul class="nav-links">
       <li><a href="#konservasi">Pendataan</a></li>
-      <li><a href="#donasi" class="btn-cta">Uji Kompetensi</a></li>
+      <li><a href="/project_fieldtrip/public/uji_kompetensi.php" class="btn-cta">Uji Kompetensi</a></li>
     </ul>
   </div>
 </nav>
